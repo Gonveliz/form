@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Formulario</title>
+</head>
+<body>
+    <section>
+        <form onsubmit={myForm(event)}>
+            <ul>
+                <li><input id="nombre" type="text" placeholder="Nombre"></li>
+                <li><input id="lastName" type="text" placeholder="Apellido"></li>
+                <li><input id="email" type="email" placeholder="e-mail"></li>
+                <li><input id="age" type="number" placeholder="Edad"></li>
+                <li><input id="comments" type="text" placeholder="Comentario"></li>
+                <li><input name="check" id="check" type="checkbox"><p>Acepto terminos y condiciones</p></li>
+                <li><button id="send" type="submit" value="Enviar">ENVIAR</button></li>
+            </ul>
+        </form>
+        <div id="formValues"></div>
+    </section>
+    <script src="index.js"></script>
+</body>
+</html>

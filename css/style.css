@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  list-style: none;
+}
+
+section {
+  background-color: #7d7e7e;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section form {
+  background-color: cornflowerblue;
+  border-radius: 0.4rem;
+  padding: 1rem;
+  width: 20%;
+}
+section form ul li {
+  list-style: none;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+section form ul li input {
+  border-radius: 0.2rem;
+  height: 2rem;
+  text-indent: 0.5rem;
+}
+section form ul li #comments {
+  height: 6rem;
+}
+section form ul li button {
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+  background-color: darkslateblue;
+  border: 2px solid darkslategrey;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+section form ul li button:hover {
+  background-color: white;
+  color: darkslateblue;
+}
+
+.err {
+  border: 3px solid #c40606;
+}
+
+/*# sourceMappingURL=style.css.map */
