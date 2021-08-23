@@ -13,9 +13,6 @@ const myForm = (event) => {
   let age = document.getElementById("age");
   let check = document.getElementById("check");
 
-  // nombre.value === "" || lastName.value ==="" || email.value === "" ? alert("Completa los campos Obligatorios"): console.log("Campos Obligatorios completados");
-  // check.checked === true ? console.log("Aceptaste terminos y condiciones"): alert("Acepta los terminos y condiciones para continuar");
-
   if (nombre.value === "" || lastName.value === "" || email.value === "") {
     alert("Completa los campos Obligatorios");
   } else if (!check.checked) {
@@ -42,9 +39,6 @@ const myForm = (event) => {
                         <li><p>${email.value}</p></li>
                     </ul>`
         );
-        // for (let i = 0; i < escritos.length; i++) {
-        //     formValues.innerHTML = escritos
-        // }
       },
     });
     console.log(escritos);
@@ -55,10 +49,9 @@ const myForm = (event) => {
   !lastName.value ? lastName.classList.add("err") : lastName.classList.remove("err");
   !email.value ? email.classList.add("err") : email.classList.remove("err");
 
-  vamos();
+  escrituraFuncion();
 };
-// me esta imprimiendo solo el ultimo hijo, necesitaria que las impresiones se me guarden y no se resetee con cada envio
-const vamos = () => {
+const escrituraFuncion = () => {
   for (let i = 0; i < persona.length; i++) {
     persona[i].escritura();
     let lastchild = escritos.length - 1;
