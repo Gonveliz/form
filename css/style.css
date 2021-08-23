@@ -53,6 +53,7 @@ section form ul li button:hover {
 
 #formValues {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
 }
 #formValues ul {
