@@ -3,10 +3,9 @@ const escritos = [];
 
 let formValues = document.getElementById("formValues");
 const myForm = (event) => {
+    console.log(event)
   event.preventDefault();
-  const mailformat =
-    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-
+  const mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
   let nombre = document.getElementById("nombre");
   let lastName = document.getElementById("lastName");
   let email = document.getElementById("email");
@@ -20,29 +19,19 @@ const myForm = (event) => {
   } else if (age.value < 18) {
     alert("Tienes que ser mayor de edad para ingresar");
   } else {
-    alert(
-      `Bienvenido ${nombre.value}, tus datos han sido ingresados correctamente`
-    );
-    let numAleatorio = Math.floor(Math.random() * (50 - 0 + 1) + 0);
+    let numAleatoreo = Math.floor(Math.random() * (50 - 0 + 1) + 0)
     persona.push({
       nombre: nombre.value,
       apellido: lastName.value,
       email: email.value,
       age: age.value,
-      escritura: function () {
-        escritos.push(
-          `<ul>
-                        <li><img class="avatar" src="https://i.pravatar.cc/150?img=${numAleatorio}" alt=""></li>
-                        <li><p>${nombre.value}</p></li>
-                        <li><p>${lastName.value}</p></li>
-                        <li><p>${age.value}</p></li>
-                        <li><p>${email.value}</p></li>
-                    </ul>`
-        );
-      },
+      id: numAleatoreo
     });
     console.log(escritos);
     console.log(persona);
+    alert(
+        `Bienvenido ${nombre.value}, tus datos han sido ingresados correctamente`
+      );
   }
 
   !nombre.value ? nombre.classList.add("err") : nombre.classList.remove("err");
@@ -52,64 +41,32 @@ const myForm = (event) => {
   escrituraFuncion();
 };
 const escrituraFuncion = () => {
-  for (let i = 0; i < persona.length; i++) {
-    persona[i].escritura();
-    let lastchild = escritos.length - 1;
-    formValues.innerHTML += escritos[lastchild];
-
-    // persona[i].escritura();
-    // let lastchild = escritos.length - 1
-    // let childs = escritos.length - lastchild
-    // formValues.innerHTML = escritos[lastchild] + escritos[childs];
-  }
-};
-
-// formValues.innerHTML =
-// `<ul>
-//     <li><img class="avatar" src="https://i.pravatar.cc/150?img=${numAleatorio}" alt=""></li>
-//     <li><p>${nombre.value}</p></li>
-//     <li><p>${lastName.value}</p></li>
-//     <li><p>${age.value}</p></li>
-//     <li><p>${email.value}</p></li>
-// </ul>`
-
-// let formValues = document.getElementById('formValues');
-// let intro = 0;
-
-// let escrito;
-// const bucle = () => {
-//     let numAleatorio = Math.floor((Math.random() * (50 - 0 + 1)) + 0);
-//     formValues.innerHTML =
-//     `<ul>
-//         <li><img class="avatar" src="https://i.pravatar.cc/150?img=${numAleatorio}" alt=""></li>
-//         <li><p>${persona[intro].nombre}</p></li>
-//         <li><p>${persona[intro].apellido}</p></li>
-//         <li><p>${persona[intro].age}</p></li>
-//         <li><p>${persona[intro].email}</p></li>
-//     </ul>`
-// }
-
-// function bucle (i){
-//     formValues.innerHTML =
-//     `<ul>
-//         <li><img class="avatar" src="https://i.pravatar.cc/150?img=${numAleatorio}" alt=""></li>
-//         <li><p>${persona[i].nombre}</p></li>
-//         <li><p>${persona[i].apellido}</p></li>
-//         <li><p>${persona[i].age}</p></li>
-//         <li><p>${persona[i].email}</p></li>
-//     </ul>`
-// }
-
-// const pintado = () => {
-//     let formValues = document.getElementById('formValues');
-//     let numAleatorio = Math.floor((Math.random() * (50 - 0 + 1)) + 0);
-//     for (let i = 0; i < persona.length; i++) {
-//         formValues.innerHTML = `<ul>
-//                                     <li><img class="avatar" src="https://i.pravatar.cc/150?img=${numAleatorio}" alt=""></li>
-//                                     <li><p>${persona[i].nombre}</p></li>
-//                                     <li><p>${persona[i].apellido}</p></li>
-//                                     <li><p>${persona[i].age}</p></li>
-//                                     <li><p>${persona[i].email}</p></li>
-//                                 </ul>`
-//     }
-// }
+    let persona1;
+        if (escritos.length > 0) {
+            let lastchild = persona.length -1;
+            persona1 = persona[lastchild]
+            escritos.push(
+                `<ul>
+                    <li><img class="avatar" src="https://i.pravatar.cc/150?img=${persona1.id}" alt=""></li>
+                    <li><p>${persona1.nombre}</p></li>
+                    <li><p>${persona1.apellido}</p></li>
+                    <li><p>${persona1.age}</p></li>
+                    <li><p>${persona1.email}</p></li>
+                </ul>`
+            );
+            formValues.innerHTML += escritos[lastchild];
+            
+        } else {
+            persona1 = persona[0]
+            escritos.push(
+                `<ul>
+                    <li><img class="avatar" src="https://i.pravatar.cc/150?img=${persona1.id}" alt=""></li>
+                    <li><p>${persona1.nombre}</p></li>
+                    <li><p>${persona1.apellido}</p></li>
+                    <li><p>${persona1.age}</p></li>
+                    <li><p>${persona1.email}</p></li>
+                </ul>`
+            );
+            formValues.innerHTML += escritos[0];
+        }
+    };
