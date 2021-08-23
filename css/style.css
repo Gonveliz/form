@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -14,6 +15,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 section form {
   background-color: cornflowerblue;
@@ -49,8 +51,25 @@ section form ul li button:hover {
   color: darkslateblue;
 }
 
+#formValues {
+  display: flex;
+  flex-direction: row;
+}
+#formValues ul {
+  list-style: none;
+  text-align: center;
+  margin: 2rem;
+  background-color: aliceblue;
+  border-radius: 2rem;
+  padding: 2rem;
+}
+
 .err {
   border: 3px solid #c40606;
+}
+
+.avatar {
+  border-radius: 50%;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -15,6 +15,7 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     form{
         background-color: cornflowerblue;
         border-radius: 0.4rem;
@@ -51,6 +52,21 @@ section{
         }
     }
 }
+#formValues{
+    display: flex;
+    flex-direction: row;
+    ul{
+        list-style: none;
+        text-align: center;
+        margin: 2rem;
+        background-color: aliceblue;
+        border-radius: 2rem;
+        padding: 2rem;
+    }
+}
 .err{
     border: 3px solid rgb(196, 6, 6);
+}
+.avatar{
+    border-radius: 50%;
 }
