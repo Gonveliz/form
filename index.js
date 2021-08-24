@@ -19,7 +19,7 @@ const myForm = (event) => {
   } else if (age.value < 18) {
     alert("Tienes que ser mayor de edad para ingresar");
   } else {
-    let numAleatoreo = Math.floor(Math.random() * (50 - 0 + 1) + 0)
+    let numAleatoreo = Math.floor(Math.random() * (70 - 0 + 1) + 0)
     persona.push({
       nombre: nombre.value,
       apellido: lastName.value,
@@ -48,8 +48,8 @@ const escrituraFuncion = () => {
             escritos.push(
                 `<ul>
                     <li><img class="avatar" src="https://i.pravatar.cc/150?img=${persona1.id}" alt=""></li>
-                    <li><p>${persona1.nombre}</p></li>
-                    <li><p>${persona1.apellido}</p></li>
+                    <li><h3>${persona1.nombre}</h3></li>
+                    <li><h2>${persona1.apellido}</h2></li>
                     <li><p>${persona1.age}</p></li>
                     <li><p>${persona1.email}</p></li>
                 </ul>`
@@ -61,8 +61,8 @@ const escrituraFuncion = () => {
             escritos.push(
                 `<ul>
                     <li><img class="avatar" src="https://i.pravatar.cc/150?img=${persona1.id}" alt=""></li>
-                    <li><p>${persona1.nombre}</p></li>
-                    <li><p>${persona1.apellido}</p></li>
+                    <li><h3>${persona1.nombre}</h3></li>
+                    <li><h2>${persona1.apellido}</h2></li>
                     <li><p>${persona1.age}</p></li>
                     <li><p>${persona1.email}</p></li>
                 </ul>`
