@@ -6,66 +6,85 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
 
-body{
-    list-style: none;
-    font-family: 'Titillium Web', sans-serif;
-    background-color: #FF5733;
-}
-section{
-    background-color:#FF5733;
-    padding: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    form{
-        background-color: #571845;
-        border-radius: 0.4rem;
-        padding: 1rem;
-        width: 26%;
-        ul{
-            .checkclass{
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-                p{
-                    text-indent: 0.5rem;
-                    color: white;
-                    font-weight: bold;
-                }
-            }
-            li{
-                list-style: none;
-                margin-top: 1rem;
-                display: flex;
-                flex-direction: column;
+// ----------------- Mobile ---------- //
 
-                input{
-                    border-radius: 0.2rem;
-                    height: 2rem;
-                    text-indent: 0.5rem;
+
+@media (min-width: 320px){
+    body{
+        list-style: none;
+        font-family: 'Titillium Web', sans-serif;
+        background-color: #FF5733;
+    }
+    section{
+        background-color:#FF5733;
+        padding: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        form{
+            background-color: #571845;
+            border-radius: 0.4rem;
+            padding: 1rem;
+            width: 95%;
+            ul{
+                .checkclass{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    p{
+                        text-indent: 0.5rem;
+                        color: white;
+                        font-weight: bold;
+                    }
                 }
-                #comments{
-                    height: 6rem;
-                }
-                button{
-                    padding: 0.5rem;
-                    border-radius: 0.4rem;
-                    background-color: darkslateblue;
-                    border: 2px solid darkslategrey;
-                    color: white;
-                    font-weight: bold;
-                    cursor: pointer;
-                    &:hover{
-                        background-color: white;
-                        color: darkslateblue;
+                li{
+                    list-style: none;
+                    margin-top: 1rem;
+                    display: flex;
+                    flex-direction: column;
+    
+                    input{
+                        border-radius: 0.2rem;
+                        height: 2rem;
+                        text-indent: 0.5rem;
+                    }
+                    #comments{
+                        height: 6rem;
+                    }
+                    button{
+                        padding: 0.5rem;
+                        border-radius: 0.4rem;
+                        background-color: darkslateblue;
+                        border: 2px solid darkslategrey;
+                        color: white;
+                        font-weight: bold;
+                        cursor: pointer;
+                        &:hover{
+                            background-color: white;
+                            color: darkslateblue;
+                        }
                     }
                 }
             }
         }
     }
 }
+// ----------------- Tablet ---------- //
+@media (min-width: 768px){
+    section{
+            form{
+            width: 50%;
+        }
+    }
+}
+// ----------------- Desktop ---------- //
+
+@media (min-width: 1200px){
+}
+
+
 #formValues{
     display: flex;
     flex-wrap: wrap;
